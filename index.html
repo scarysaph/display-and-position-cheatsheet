@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <title>Display and Positioning in CSS</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+    <section class="title">
+        <h1>Display and Positioning CSS cheatsheet</h1>
+        <p>By default, a browser will render elements in a html document with no css from top to bottom and left to right, in the order they appear. Here are 5 CSS properties that change how the browser positions elements.</p>
+    </section>
+    <main>
+        <section class="position">
+            <h2>Position</h2>
+            <p>This property changes the position of the element, using offset properties <span class="code">top</span>, <span class="code">bottom</span>, <span class="code">left</span> and <span class="code">right</span>.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">
+                            <span class="code">static</span>
+                        </td>
+                        <td>
+                            The default position. Element block takes up the full width of parent element, prevent other elements appearing in the same horizontal space and appear on the left side of the browser.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">relative</span>
+                        </td>
+                        <td>
+                            Element is positioned <span class="code">relative</span> to usual <span class="code">static</span> position.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">absolute</span>
+                        </td>
+                        <td>
+                            Element is removed from the flow of the document (ignored by other elements) and positioned <span class="code">relative</span> to its closest non-static parent element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">fixed</span>
+                        </td>
+                        <td>
+                            Element is removed from the flow of the document(ignored by other elements) and fixed to a point on the page regardless of user scrolling.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">sticky</span>
+                        </td>
+                        <td>
+                            Element acts <span class="code">position: relative</span> until it reaches the position defined by offset properties. Then it acts <span class="code">position: fixed</span> regardless of scrolling until it reaches the end of its parent element where it will rejoin document flow.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">top, bottom, right, left</span>
+                        </td>
+                        <td>
+                            Offset properties that position element away from respective directions.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="display">
+            <h2>Display</h2>
+            <p>This property dictates how much space an element block takes up.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Values
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">
+                            <span class="code">inline</span>
+                        </td>
+                        <td>
+                            Elements have a box wrapped tightly around content, taking up only the space required to dispaly it and not requiring a new line afterwards. Element size cannot be altered using <span class="code">width</span> and <span class="code">height</span>. Default display for <span class="code">&lt;em&gt;</span>, <span class="code">&lt;a&gt;</span> and <span class="code">&lt;strong&gt;</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">block</span>
+                        </td>
+                        <td>
+                            Element displayed on a separate line and takes up width of page by default but its size can be adjusted. Default display for <span class="code"> &lt;h1&gt;</span> to <span class="code">&lt;h6&gt;</span>, <span class="code">&lt;p&gt;</span>, <span class="code">&lt;div&gt;</span> and <span class="code">&lt;footer&gt;</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">inline-block</span>
+                        </td>
+                        <td>
+                            Elements can appear next to each other and <span class="code">height</span> and <span class="code">width</span> can be adjusted. Default display for images.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="z-index">
+            <h2>Z-Index</h2>
+            <p>This property controls how far back or forwards an element appears on the page.</p>
+            <ul>
+                <li>
+                    It takes integer values with the largest value appearing on top.
+                </li>
+                <li>
+                    The default value is 0.
+                </li>
+                <li>
+                    Used only on non-statically positioned elements.
+                </li>
+            </ul>
+        </section>
+        <section class="float">
+            <h2>Float</h2>
+            <p>This property moves an element as far left or as far right as possible in its container. The element must have a <span class="code">width</span> specified otherwise it will be assumed to be the same as its parent element and <span class="code">float</span> will have no effect. It is better to use <span class="code">grid</span> or <span class="code">flexbox</span>.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Values
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">
+                            <span class="code">left</span>
+                        </td>
+                        <td>
+                            Element is floated as far left as possible.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">right</span>
+                        </td>
+                        <td>
+                            Element is floated as far right as possible.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section clas="clear">
+            <h2>Clear</h2>
+            <p>This property specifies how elements should behave when they bump into each other on the page. Elements with the <span class="code">clear</span> property will move to the next line if they come in contact with a floated element on that side.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Values
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">
+                            <span class="code">left</span>
+                        </td>
+                        <td>
+                            The left side of the element will not touch any other element within the same containing element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">right</span>
+                        </td>
+                        <td>
+                            The right side of the element will not touch any other element within the same containing element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">both</span>
+                        </td>
+                        <td>
+                            Neither side of the element will touch any other element within the same containing element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="first">
+                            <span class="code">none</span>
+                        </td>
+                        <td>
+                            The element can be touched on either side.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    </body>
+</html>
